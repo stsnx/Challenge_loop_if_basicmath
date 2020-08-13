@@ -8,8 +8,8 @@ float xbar(int x, int y)
 	{
 		s += i;
 	}
-	xb = s / (float)(y + 1 - x);
-	return s / (float)(y + 1 - x);
+	xb = s / (float)(y +1 - x);
+	return s / (float)(y+1 - x);
 }
 float SD(int x, int y)
 {
@@ -17,7 +17,9 @@ float SD(int x, int y)
 	{
 		sx += pow(i - xb, 2);
 	}
-	sx /= (float)(y + 1 - x);
+	if (x != y)
+	sx /= (float)(y - x);
+	else sx = 0;
 	return sqrt(sx);
 }
 int main()
